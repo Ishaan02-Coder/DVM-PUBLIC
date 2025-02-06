@@ -6,16 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function moveCarousel() {
         let totalSlides = carouselSlides.length;
-        if (totalSlides === 0) return; // Prevent errors if no slides
-    
-        // Hide all slides first
+        if (totalSlides === 0) return;
         carouselSlides.forEach(slide => {
             slide.style.display = "none";
         });
     
-        // Show the next 4 slides correctly, ensuring smooth looping
-        for (let j = 0; j < 4; j++) {
-            let index = (carouselIndex + j) % totalSlides; // Correct wrap-around logic
+              for (let j = 0; j < 4; j++) {
+            let index = (carouselIndex + j) % totalSlides; 
             if (carouselSlides[index]) {
                 carouselSlides[index].style.display = "block";
             }
@@ -25,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
         carouselIndex = (carouselIndex + 1) % carouselSlides.length;
         moveCarousel();
-    }, 3000); // Every 3 seconds
+    }, 3000);
     document.getElementById("next-arrow-carousel").addEventListener("click", () => {
-        carouselIndex = (carouselIndex + 1) % carouselSlides.length; // Move forward, looping
+        carouselIndex = (carouselIndex + 1) % carouselSlides.length;
         moveCarousel();
     });
     
     document.getElementById("prev-arrow-carousel").addEventListener("click", () => {
-        carouselIndex = (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length; // Move backward, looping
+        carouselIndex = (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length; 
         moveCarousel();
     });
     let shopIndex = 0;
