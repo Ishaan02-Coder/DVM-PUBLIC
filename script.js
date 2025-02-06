@@ -5,25 +5,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const carouselSlides = document.querySelectorAll(".carousel .slide");
 
     function moveCarousel() {
-        carouselSlides.forEach((slide, i) => {
-            slide.style.display = i === carouselIndex ? "block" : "none";
+        let totalSlides = carouselSlides.length;
+        if (totalSlides === 0) return; // Prevent errors if no slides
+    
+        // Hide all slides first
+        carouselSlides.forEach(slide => {
+            slide.style.display = "none";
         });
+    
+        // Show the next 4 slides correctly, ensuring smooth looping
+        for (let j = 0; j < 4; j++) {
+            let index = (carouselIndex + j) % totalSlides; // Correct wrap-around logic
+            if (carouselSlides[index]) {
+                carouselSlides[index].style.display = "block";
+            }
+        }
     }
 
-    setInterval(function() {
+    setInterval(() => {
         carouselIndex = (carouselIndex + 1) % carouselSlides.length;
         moveCarousel();
-    }, 3000);
+    }, 3000); // Every 3 seconds
     document.getElementById("next-arrow-carousel").addEventListener("click", () => {
-        carouselIndex = (carouselIndex + 1) % carouselSlides.length;
+        carouselIndex = (carouselIndex + 1) % carouselSlides.length; // Move forward, looping
         moveCarousel();
     });
-
+    
     document.getElementById("prev-arrow-carousel").addEventListener("click", () => {
-        carouselIndex = (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length;
+        carouselIndex = (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length; // Move backward, looping
         moveCarousel();
     });
-
     let shopIndex = 0;
     const shopItems = document.querySelectorAll('.shop-products .product');
     const shopItemsVisible = 6; 
@@ -106,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Website Loaded!");
 
     
-    let shopIndex = 0;
+    let shopIndex = 1;
     const shopItems = document.querySelectorAll('.shop-products .product');
     const shopItemsVisible = 6; 
     const totalItems = shopItems.length; 
@@ -114,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateShopPosition() {
         shopItems.forEach((item, index) => {
             if (index >= shopIndex * shopItemsVisible && index < (shopIndex + 1) * shopItemsVisible) {
-                item.style.display = 'block'; 
+                item.style.display = 'grid'; 
             } else {
                 item.style.display = 'none';
             }
@@ -184,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
 
             Object.values(carousels).forEach(carousel => carousel.style.display = "none");
-            carousels[this.dataset.category].style.display = "block";
+            carousels[this.dataset.category].style.display = "flex";
         });
     });
 });
