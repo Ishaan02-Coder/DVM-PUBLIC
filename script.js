@@ -67,17 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
    
     moveCarousel();
     updateShopPosition();
-
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        const hamburger = document.getElementById('hamburger-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    });
-
     const menus = {
         shop: document.getElementById("shop-menu"),
         discover: document.getElementById("discover-menu")
@@ -204,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.getElementById('nav-links');
 
     function toggleMenu() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1025) {
             if (navLinks.style.display === "none" || navLinks.style.display === "") {
                 navLinks.style.display = "flex";
                 navLinks.classList.add("transparent"); 
@@ -216,14 +205,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1025) {
         navLinks.style.display = "none";
     }
 
     hamburger.addEventListener('click', toggleMenu);
 
     window.addEventListener("resize", function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1025) {
             navLinks.style.display = "flex"; 
             navLinks.classList.remove("transparent"); 
         } else {
@@ -265,3 +254,4 @@ function handleEmail() {
     emailInput.value = "";
     checkbox.checked = false; 
 }
+

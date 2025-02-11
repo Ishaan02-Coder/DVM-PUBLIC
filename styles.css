@@ -55,6 +55,7 @@ input[type="text"] {
     margin-left: 1%;
 }
 @media (max-width: 768px) {
+    
     nav ul {
         display: none;
         flex-direction: column;
@@ -118,15 +119,6 @@ input[type="text"] {
     position: relative;
 }
 
-.arrow {
-    font-size: 30px;
-    color: #333; 
-    cursor: pointer;
-    padding: 10px;
-    margin: 0 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-}
 
 #prev-arrow-carousel, #next-arrow-carousel, #prev-arrow-shop, #next-arrow-shop {
     cursor: pointer;
@@ -170,7 +162,6 @@ nav input {
     background-color: rgba(255, 255, 255, .3);
     background-repeat: no-repeat;
     background-position: right;  
-    margin-left: 5%;
 }
 
 nav ul li {
@@ -382,11 +373,23 @@ header {
     .shop-products .product-grid {
         grid-template-columns: repeat(2, 1fr); 
     }
+    .featured {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        justify-content: center;
+        padding: 10px;
+        gap:5%;
+        padding-bottom: 20px;
+        height:2500px;
+    }
 }
 
 @media (max-width: 480px) {
     .shop-products .product-grid {
         grid-template-columns: 1fr; 
+    }
+    .featured{
+        height:2000px;
     }
 }
 
@@ -445,7 +448,7 @@ nav {
     color: black;
     cursor: pointer;
     padding: 10px;
-    margin: 0 20px;
+    margin: 0 ;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
 }
@@ -648,13 +651,13 @@ button:hover {
 }
 #nav-links
 {
-    margin-left: 20%;
+    margin-left: 10%;
 }
 .slide {
     margin: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
     #nav-links {
         display: none; 
         flex-direction: column;
@@ -668,7 +671,6 @@ button:hover {
 
    
     #nav-links.transparent {
-        background-color: rgba(255, 255, 255, 0.8); 
         backdrop-filter: blur(10px); 
     }
 }
@@ -677,12 +679,10 @@ button:hover {
 @media (min-width: 769px) {
 
     #nav-links {
-        display: flex !important; 
+        display: none
     }
 
-    .hamburger {
-        display: none;
-    }
+ 
     #a1{
         margin-left: 21%;
     }
@@ -816,7 +816,30 @@ footer{
     padding-bottom: 5px;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1025px) {
+     .logo2{
+        margin-left: 40%;
+     }
+     .hamburger{
+        position: absolute;
+     }
+     nav input{
+        background-color: transparent;
+        position: absolute;
+        bottom: 10;
+        right: 0;
+      
+        
+     }
+     nav ::placeholder{
+        color:transparent;
+     }
+     .abc{
+        display: none;
+     }
+     
+
     .series-grid, .product-grid,.ser {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -868,13 +891,56 @@ footer{
         margin: 0;
     }
 }
+@media(max-width:1025px){
+  header{
+    background-image: url("https:\2f\2fresource.logitech.com\2fw_1024,h_1366,c_limit,q_auto,f_auto,dpr_1.0\2f d_transparent.gif\2f content\2f dam\2flogitech\2f en\2fhomepage\2fmx-brio-hpb-tablet.jpg?v=1");
+    }
+    #head1{
+        display: none;
+    }
+     .hero{
+        margin-top: -70px;
+        height: 480px;
+     }
+    .hero h1 br{
+        display: none;
+    }
+    .hero h1,p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .buttons {
+        display: flex;
+        justify-content: center; 
+        gap: 10px;
+        margin-top: 20px; 
+     }
+    #b1, #b2 {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+}
 html, body {
     overflow-x: hidden;
 }
 .ser .im{
     height:120%;
 }
-.abc{
-    padding-left:0;
-    margin-right: 10%;
-}
+
+@media (max-width: 480px) {
+    .logo2{
+       margin-left: 35%;
+    }}
+    .abc{
+        margin-right: 5%;
+    }
+    .chat{
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        z-index: 2;
+        cursor: pointer;
+    }
