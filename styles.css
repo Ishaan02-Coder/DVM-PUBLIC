@@ -457,6 +457,11 @@ nav {
     .carousel-container {
         max-width: 100%;
     }
+    #nav-links
+    {
+        position: absolute;
+        left:-350px;
+    }
 }
 .carousel-container {
     max-width: 100%;
@@ -669,17 +674,13 @@ button:hover {
         display: block;
     }
 
-   
-    #nav-links.transparent {
-        backdrop-filter: blur(10px); 
-    }
 }
 
 
 @media (min-width: 769px) {
 
     #nav-links {
-        display: none
+        display: none;
     }
 
  
@@ -859,6 +860,11 @@ footer{
         padding: 6px 12px;
         max-width: 75%; 
     }
+    #nav-links
+{
+    position: absolute;
+    left:-300px;
+}
 }
 
 .shop-arrows {
@@ -943,4 +949,13 @@ html, body {
         right: 10px;
         z-index: 2;
         cursor: pointer;
+    }
+    #nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: transparent;
+        color: black;
+        position: relative;
     }
