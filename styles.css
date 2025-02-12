@@ -452,6 +452,14 @@ nav {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
 }
+@media (max-width:1025px)
+{
+#nav-links
+    {
+        position: absolute;
+        left:-450px;
+    }
+}
 
 @media (max-width: 768px) {
     .carousel-container {
@@ -460,7 +468,18 @@ nav {
     #nav-links
     {
         position: absolute;
-        left:-350px;
+        left:-400px;
+        top:100px;
+    }
+}
+
+@media (max-width:480px)
+{
+#nav-links
+    {
+        position: absolute;
+        left:0;
+        top:100px;
     }
 }
 .carousel-container {
@@ -939,7 +958,9 @@ html, body {
 @media (max-width: 480px) {
     .logo2{
        margin-left: 35%;
-    }}
+    }
+    
+}
     .abc{
         margin-right: 5%;
     }
